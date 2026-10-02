@@ -1,0 +1,16 @@
+# ROS 2 / colcon generated output
+build/
+install/
+log/
+
+# Python cache and local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

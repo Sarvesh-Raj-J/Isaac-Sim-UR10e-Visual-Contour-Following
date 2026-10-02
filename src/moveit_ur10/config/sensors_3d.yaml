@@ -1,0 +1,17 @@
+# 1. Define the sensor names first (List of Strings)
+sensors: []
+#  - rebar_camera_sensor
+
+# 2. Define the configuration for that specific sensor (Dictionary)
+#rebar_camera_sensor:
+#  sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
+#  point_cloud_topic: /depth_pcl
+#  max_range: 2.5
+#  point_subsample: 1
+#  padding_offset: 0.05
+#  padding_scale: 1.0
+#  max_update_rate: 1.0
+#  filtered_cloud_topic: filtered_cloud
+#  near_clipping_plane_distance: 0.1
+#  far_clipping_plane_distance: 3.0
+#  shadow_threshold: 0.2

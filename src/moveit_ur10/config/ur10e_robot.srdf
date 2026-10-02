@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="ur10e_robot">
+    <!--GROUPS-->
+    <group name="arm">
+        <chain base_link="base_link" tip_link="tool0" />
+    </group>
+
+    <!--GROUP STATES-->
+    <group_state name="home" group="arm">
+        <joint name="shoulder_pan_joint"  value="-1.997"  />
+        <joint name="shoulder_lift_joint" value="-1.7996" />
+        <joint name="elbow_joint"         value="-0.4136" />
+        <joint name="wrist_1_joint"       value="3.8811"  />
+        <joint name="wrist_2_joint"       value="1.6155"  />
+        <joint name="wrist_3_joint"       value="-3.5654" />
+    </group_state>
+
+    <!--VIRTUAL JOINT-->
+    <virtual_joint name="world_joint" type="fixed" parent_frame="world" child_link="base_link" />
+
+    <!--DISABLE COLLISIONS-->
+    <disable_collisions link1="base_link_inertia" link2="shoulder_link" reason="Adjacent" />
+    <disable_collisions link1="forearm_link" link2="upper_arm_link" reason="Adjacent" />
+    <disable_collisions link1="forearm_link" link2="wrist_1_link" reason="Adjacent" />
+    <disable_collisions link1="shoulder_link" link2="upper_arm_link" reason="Adjacent" />
+    <disable_collisions link1="wrist_1_link" link2="wrist_2_link" reason="Adjacent" />
+    <disable_collisions link1="wrist_2_link" link2="wrist_3_link" reason="Adjacent" />
+    <disable_collisions link1="wrist_3_link" link2="rebar_tool_link" reason="Adjacent" />
+
+    <!-- Disable collisions for custom end_effector -->
+    <disable_collisions link1="end_effector" link2="wrist_3_link" reason="Adjacent" />
+    <disable_collisions link1="end_effector" link2="wrist_2_link" reason="Never" />
+    <disable_collisions link1="end_effector" link2="wrist_1_link" reason="Never" />
+    <disable_collisions link1="end_effector" link2="forearm_link" reason="Never" />
+    <disable_collisions link1="end_effector" link2="upper_arm_link" reason="Never" />
+    <disable_collisions link1="end_effector" link2="tool0" reason="Adjacent" />
+    <disable_collisions link1="end_effector" link2="flange" reason="Adjacent" />
+
+<disable_collisions link1="tool0" link2="rebar_tool_link" reason="Adjacent" />
+</robot>
